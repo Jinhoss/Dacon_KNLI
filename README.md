@@ -17,5 +17,11 @@ bert classification klue/bert model, best_loss model 5fold
 
 ## 2022-02-03
 
+1
+
 - bert classification klue/bert model, best_acc model 5fold, 
 - Adam
+
+2
+
+- auto model 
