@@ -95,3 +95,29 @@ model1 saved
 3   Average valid loss: 0.6407
   Accuracy: 0.8668
 ```
+
+
+
+4. roberta large
+
+```
+1   Average training loss: 0.4982
+  Accuracy: 0.7962
+100%|██████████| 157/157 [00:37<00:00,  4.18it/s]
+model1 saved
+1   Average valid loss: 0.3384
+  Accuracy: 0.8792
+100%|██████████| 625/625 [07:48<00:00,  1.33it/s]
+2   Average training loss: 0.2284
+  Accuracy: 0.9252
+100%|██████████| 157/157 [00:37<00:00,  4.17it/s]
+model1 saved
+2   Average valid loss: 0.3157
+  Accuracy: 0.8985
+100%|██████████| 625/625 [07:48<00:00,  1.33it/s]
+3   Average training loss: 0.1352
+  Accuracy: 0.9606
+100%|██████████| 157/157 [00:37<00:00,  4.17it/s]
+3   Average valid loss: 0.3788
+  Accuracy: 0.8983
+```
