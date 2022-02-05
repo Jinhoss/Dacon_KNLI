@@ -121,3 +121,34 @@ model1 saved
 3   Average valid loss: 0.3788
   Accuracy: 0.8983
 ```
+
+
+
+## 2022-02-06
+
+teacher electra student roberta-large
+
+0.863
+
+```
+1   Average training loss: 2.2603
+  Accuracy: 0.8116
+100%|██████████| 157/157 [00:37<00:00,  4.16it/s]
+model1 saved
+1   Average valid loss: 0.5959
+  Accuracy: 0.8863
+100%|██████████| 625/625 [08:02<00:00,  1.30it/s]
+2   Average training loss: 0.8959
+  Accuracy: 0.9163
+100%|██████████| 157/157 [00:37<00:00,  4.16it/s]
+model1 saved
+2   Average valid loss: 0.5404
+  Accuracy: 0.8939
+100%|██████████| 625/625 [08:02<00:00,  1.30it/s]
+3   Average training loss: 0.6316
+  Accuracy: 0.9392
+100%|██████████| 157/157 [00:37<00:00,  4.16it/s]
+model1 saved
+3   Average valid loss: 0.5997
+  Accuracy: 0.8961
+```
