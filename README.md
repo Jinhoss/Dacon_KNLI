@@ -152,3 +152,44 @@ model1 saved
 3   Average valid loss: 0.5997
   Accuracy: 0.8961
 ```
+
+
+
+2. xavier normal
+
+   ```
+   1   Average training loss: 0.4814
+     Accuracy: 0.8183
+   100%|██████████| 157/157 [00:37<00:00,  4.15it/s]
+   model1 saved
+   1   Average valid loss: 0.3163
+     Accuracy: 0.8927
+   100%|██████████| 625/625 [08:01<00:00,  1.30it/s]
+   2   Average training loss: 0.2242
+     Accuracy: 0.9293
+   100%|██████████| 157/157 [00:37<00:00,  4.15it/s]
+   model1 saved
+   2   Average valid loss: 0.3162
+     Accuracy: 0.8961
+   ```
+
+
+
+3. xavier_normal + bn init
+
+
+
+## 2022-02-07
+
+0.874
+
+backtranslation이용 roberta-large
+
+
+
+## 2022-02-08
+
+0.874
+
+roberta-large, self-explainable, 논문에서 제안한 loss가 아닌 평범한 ce loss 사용
+
