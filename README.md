@@ -407,3 +407,8 @@ model5 saved
   Accuracy: 0.8918
 ```
 
+
+
+2.self-explain, ce + reg loss, best_acc
+
+0.884
