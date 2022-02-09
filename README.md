@@ -193,3 +193,217 @@ backtranslation이용 roberta-large
 
 roberta-large, self-explainable, 논문에서 제안한 loss가 아닌 평범한 ce loss 사용
 
+```
+1   Average training loss: 0.4580
+  Accuracy: 0.8209
+100%|██████████| 157/157 [00:58<00:00,  2.67it/s]
+model1 saved
+1   Average valid loss: 0.2875
+  Accuracy: 0.8953
+100%|██████████| 625/625 [09:36<00:00,  1.08it/s]
+2   Average training loss: 0.2177
+  Accuracy: 0.9284
+100%|██████████| 157/157 [00:59<00:00,  2.64it/s]
+2   Average valid loss: 0.2901
+  Accuracy: 0.8945
+100%|██████████| 625/625 [09:34<00:00,  1.09it/s]
+3   Average training loss: 0.1327
+  Accuracy: 0.9620
+100%|██████████| 157/157 [00:59<00:00,  2.63it/s]
+model1 saved
+3   Average valid loss: 0.3758
+  Accuracy: 0.9011
+```
+
+```
+kaggle tpu
+
+!curl https://raw.githubusercontent.com/pytorch/xla/master/contrib/scripts/env-setup.py -o pytorch-xla-env-setup.py
+!python pytorch-xla-env-setup.py --apt-packages libomp5 libopenblas-dev
+
+!pip install https://storage.googleapis.com/tpu-pytorch/wheels/torch_xla-1.6-cp37-cp37m-linux_x86_64.whl
+!pip install torch==1.6
+
+import torch_xla
+import torch_xla.core.xla_model as xm
+```
+
+
+
+
+
+self train  데이터 추가 후 ce + reg loss 사용시
+
+
+
+```
+1   Average training loss: 0.4695
+  Accuracy: 0.8216
+100%|██████████| 175/175 [01:06<00:00,  2.64it/s]
+model1 saved
+1   Average valid loss: 0.3009
+  Accuracy: 0.8945
+100%|██████████| 700/700 [10:47<00:00,  1.08it/s]
+2   Average training loss: 0.2208
+  Accuracy: 0.9297
+100%|██████████| 175/175 [01:05<00:00,  2.67it/s]
+2   Average valid loss: 0.3849
+  Accuracy: 0.8834
+100%|██████████| 700/700 [10:47<00:00,  1.08it/s]
+3   Average training loss: 0.1414
+  Accuracy: 0.9588
+100%|██████████| 175/175 [01:05<00:00,  2.66it/s]
+model1 saved
+3   Average valid loss: 0.3795
+  Accuracy: 0.8973
+```
+
+
+
+## 2022-02-09
+
+self-explain, ce - reg loss
+
+0.883
+
+```
+1   Average training loss: 0.1291
+  Accuracy: 0.8208
+100%|██████████| 175/175 [01:06<00:00,  2.65it/s]
+model1 saved
+1   Average valid loss: 0.3065
+  Accuracy: 0.8934
+100%|██████████| 700/700 [10:48<00:00,  1.08it/s]
+
+2   Average training loss: -0.7642
+  Accuracy: 0.9228
+100%|██████████| 175/175 [01:05<00:00,  2.67it/s]
+model1 saved
+2   Average valid loss: 0.3388
+  Accuracy: 0.8989
+100%|██████████| 700/700 [10:49<00:00,  1.08it/s]
+
+3   Average training loss: -0.8565
+  Accuracy: 0.9576
+100%|██████████| 175/175 [01:05<00:00,  2.65it/s]
+3   Average valid loss: 0.4302
+  Accuracy: 0.8978
+Some weights of the model checkpoint at klue/roberta-large were not used when initializing RobertaModel: ['lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.layer_norm.bias', 'lm_head.bias', 'lm_head.layer_norm.weight', 'lm_head.dense.weight', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at klue/roberta-large and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+------------fold no---------2----------------------
+100%|██████████| 700/700 [10:46<00:00,  1.08it/s]
+
+1   Average training loss: 0.3452
+  Accuracy: 0.8214
+100%|██████████| 175/175 [01:06<00:00,  2.64it/s]
+model2 saved
+1   Average valid loss: 0.3173
+  Accuracy: 0.8914
+100%|██████████| 700/700 [10:45<00:00,  1.08it/s]
+
+2   Average training loss: -0.7611
+  Accuracy: 0.9241
+100%|██████████| 175/175 [01:06<00:00,  2.62it/s]
+model2 saved
+2   Average valid loss: 0.3358
+  Accuracy: 0.9000
+100%|██████████| 700/700 [10:45<00:00,  1.09it/s]
+
+3   Average training loss: -0.8605
+  Accuracy: 0.9588
+100%|██████████| 175/175 [01:06<00:00,  2.64it/s]
+model2 saved
+3   Average valid loss: 0.3811
+  Accuracy: 0.9009
+Some weights of the model checkpoint at klue/roberta-large were not used when initializing RobertaModel: ['lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.layer_norm.bias', 'lm_head.bias', 'lm_head.layer_norm.weight', 'lm_head.dense.weight', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at klue/roberta-large and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+------------fold no---------3----------------------
+100%|██████████| 700/700 [10:47<00:00,  1.08it/s]
+
+1   Average training loss: 0.2217
+  Accuracy: 0.8215
+100%|██████████| 175/175 [01:06<00:00,  2.64it/s]
+model3 saved
+1   Average valid loss: 0.3187
+  Accuracy: 0.8878
+100%|██████████| 700/700 [10:47<00:00,  1.08it/s]
+
+2   Average training loss: -0.7217
+  Accuracy: 0.9184
+100%|██████████| 175/175 [01:05<00:00,  2.65it/s]
+2   Average valid loss: 0.3907
+  Accuracy: 0.8617
+100%|██████████| 700/700 [10:47<00:00,  1.08it/s]
+
+3   Average training loss: -0.7846
+  Accuracy: 0.9412
+100%|██████████| 175/175 [01:06<00:00,  2.65it/s]
+model3 saved
+3   Average valid loss: 0.3887
+  Accuracy: 0.8884
+Some weights of the model checkpoint at klue/roberta-large were not used when initializing RobertaModel: ['lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.layer_norm.bias', 'lm_head.bias', 'lm_head.layer_norm.weight', 'lm_head.dense.weight', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at klue/roberta-large and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+------------fold no---------4----------------------
+100%|██████████| 700/700 [10:48<00:00,  1.08it/s]
+
+1   Average training loss: 0.0888
+  Accuracy: 0.8206
+100%|██████████| 175/175 [01:06<00:00,  2.64it/s]
+model4 saved
+1   Average valid loss: 0.2812
+  Accuracy: 0.8991
+100%|██████████| 700/700 [10:46<00:00,  1.08it/s]
+
+2   Average training loss: -0.7717
+  Accuracy: 0.9265
+100%|██████████| 175/175 [01:05<00:00,  2.66it/s]
+model4 saved
+2   Average valid loss: 0.3018
+  Accuracy: 0.9069
+100%|██████████| 700/700 [10:46<00:00,  1.08it/s]
+
+3   Average training loss: -0.8544
+  Accuracy: 0.9582
+100%|██████████| 175/175 [01:05<00:00,  2.67it/s]
+3   Average valid loss: 0.3419
+  Accuracy: 0.8996
+Some weights of the model checkpoint at klue/roberta-large were not used when initializing RobertaModel: ['lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.layer_norm.bias', 'lm_head.bias', 'lm_head.layer_norm.weight', 'lm_head.dense.weight', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at klue/roberta-large and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+------------fold no---------5----------------------
+100%|██████████| 700/700 [10:45<00:00,  1.08it/s]
+
+1   Average training loss: -0.0591
+  Accuracy: 0.8279
+100%|██████████| 175/175 [01:05<00:00,  2.66it/s]
+model5 saved
+1   Average valid loss: 0.3396
+  Accuracy: 0.8876
+100%|██████████| 700/700 [10:48<00:00,  1.08it/s]
+
+2   Average training loss: -0.7645
+  Accuracy: 0.9260
+100%|██████████| 175/175 [01:05<00:00,  2.67it/s]
+2   Average valid loss: 0.3465
+  Accuracy: 0.8813
+100%|██████████| 700/700 [10:50<00:00,  1.08it/s]
+
+3   Average training loss: -0.8448
+  Accuracy: 0.9550
+100%|██████████| 175/175 [01:06<00:00,  2.63it/s]
+model5 saved
+3   Average valid loss: 0.3914
+  Accuracy: 0.8918
+```
+
