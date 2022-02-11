@@ -412,3 +412,161 @@ model5 saved
 2.self-explain, ce + reg loss, best_acc
 
 0.884
+
+
+
+
+
+init_params1
+
+```
+1   Average training loss: 0.4908
+  Accuracy: 0.8101
+100%|██████████| 222/222 [01:25<00:00,  2.61it/s]
+model1 saved
+1   Average valid loss: 0.3785
+  Accuracy: 0.8663
+100%|██████████| 888/888 [13:51<00:00,  1.07it/s]
+2   Average training loss: 0.2122
+  Accuracy: 0.9280
+100%|██████████| 222/222 [01:24<00:00,  2.62it/s]
+model1 saved
+2   Average valid loss: 0.3931
+  Accuracy: 0.8821
+```
+
+
+
+
+
+init_params를 줬을 때 결과2
+
+```
+1   Average training loss: 0.4908
+  Accuracy: 0.8091
+100%|██████████| 222/222 [01:27<00:00,  2.55it/s]
+model1 saved
+1   Average valid loss: 0.4011
+  Accuracy: 0.8581
+100%|██████████| 888/888 [13:55<00:00,  1.06it/s]
+2   Average training loss: 0.2135
+  Accuracy: 0.9291
+100%|██████████| 222/222 [01:26<00:00,  2.56it/s]
+model1 saved
+2   Average valid loss: 0.4464
+  Accuracy: 0.8831
+100%|██████████| 888/888 [13:55<00:00,  1.06it/s]
+3   Average training loss: 0.0913
+  Accuracy: 0.9739
+100%|██████████| 222/222 [01:26<00:00,  2.56it/s]
+model1 saved
+3   Average valid loss: 0.5433
+  Accuracy: 0.8918
+Some weights of the model checkpoint at klue/roberta-large were not used when initializing RobertaModel: ['lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.weight', 'lm_head.dense.weight', 'lm_head.decoder.bias', 'lm_head.layer_norm.weight', 'lm_head.bias']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at klue/roberta-large and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+------------fold no---------2----------------------
+100%|██████████| 888/888 [13:57<00:00,  1.06it/s]
+1   Average training loss: 0.5042
+  Accuracy: 0.8050
+100%|██████████| 222/222 [01:26<00:00,  2.57it/s]
+model2 saved
+1   Average valid loss: 0.3883
+  Accuracy: 0.8598
+100%|██████████| 888/888 [13:58<00:00,  1.06it/s]
+2   Average training loss: 0.2219
+  Accuracy: 0.9248
+100%|██████████| 222/222 [01:26<00:00,  2.56it/s]
+model2 saved
+2   Average valid loss: 0.3812
+  Accuracy: 0.8819
+100%|██████████| 888/888 [13:55<00:00,  1.06it/s]
+3   Average training loss: 0.0936
+  Accuracy: 0.9721
+100%|██████████| 222/222 [01:26<00:00,  2.55it/s]
+model2 saved
+3   Average valid loss: 0.5574
+  Accuracy: 0.8821
+Some weights of the model checkpoint at klue/roberta-large were not used when initializing RobertaModel: ['lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.weight', 'lm_head.dense.weight', 'lm_head.decoder.bias', 'lm_head.layer_norm.weight', 'lm_head.bias']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at klue/roberta-large and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+------------fold no---------3----------------------
+100%|██████████| 888/888 [13:56<00:00,  1.06it/s]
+1   Average training loss: 0.4815
+  Accuracy: 0.8136
+100%|██████████| 222/222 [01:26<00:00,  2.57it/s]
+model3 saved
+1   Average valid loss: 0.3485
+  Accuracy: 0.8768
+100%|██████████| 888/888 [13:57<00:00,  1.06it/s]
+2   Average training loss: 0.2106
+  Accuracy: 0.9308
+100%|██████████| 222/222 [01:26<00:00,  2.56it/s]
+model3 saved
+2   Average valid loss: 0.3905
+  Accuracy: 0.8831
+100%|██████████| 888/888 [13:57<00:00,  1.06it/s]
+3   Average training loss: 0.0871
+  Accuracy: 0.9751
+100%|██████████| 222/222 [01:26<00:00,  2.55it/s]
+model3 saved
+3   Average valid loss: 0.5540
+  Accuracy: 0.8871
+Some weights of the model checkpoint at klue/roberta-large were not used when initializing RobertaModel: ['lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.weight', 'lm_head.dense.weight', 'lm_head.decoder.bias', 'lm_head.layer_norm.weight', 'lm_head.bias']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at klue/roberta-large and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+------------fold no---------4----------------------
+100%|██████████| 888/888 [13:56<00:00,  1.06it/s]
+1   Average training loss: 0.5013
+  Accuracy: 0.8004
+100%|██████████| 222/222 [01:27<00:00,  2.54it/s]
+model4 saved
+1   Average valid loss: 0.3549
+  Accuracy: 0.8684
+100%|██████████| 888/888 [13:56<00:00,  1.06it/s]
+2   Average training loss: 0.2095
+  Accuracy: 0.9286
+100%|██████████| 222/222 [01:27<00:00,  2.54it/s]
+model4 saved
+2   Average valid loss: 0.3603
+  Accuracy: 0.8890
+100%|██████████| 888/888 [13:56<00:00,  1.06it/s]
+3   Average training loss: 0.0912
+  Accuracy: 0.9738
+100%|██████████| 222/222 [01:27<00:00,  2.53it/s]
+3   Average valid loss: 0.5162
+  Accuracy: 0.8874
+Some weights of the model checkpoint at klue/roberta-large were not used when initializing RobertaModel: ['lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.weight', 'lm_head.dense.weight', 'lm_head.decoder.bias', 'lm_head.layer_norm.weight', 'lm_head.bias']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at klue/roberta-large and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+------------fold no---------5----------------------
+100%|██████████| 888/888 [13:59<00:00,  1.06it/s]
+1   Average training loss: 0.4826
+  Accuracy: 0.8115
+100%|██████████| 222/222 [01:26<00:00,  2.55it/s]
+model5 saved
+1   Average valid loss: 0.3264
+  Accuracy: 0.8778
+100%|██████████| 888/888 [14:00<00:00,  1.06it/s]
+2   Average training loss: 0.2056
+  Accuracy: 0.9317
+100%|██████████| 222/222 [01:27<00:00,  2.54it/s]
+model5 saved
+2   Average valid loss: 0.3766
+  Accuracy: 0.8870
+100%|██████████| 888/888 [13:59<00:00,  1.06it/s]
+3   Average training loss: 0.0917
+  Accuracy: 0.9728
+100%|██████████| 222/222 [01:27<00:00,  2.54it/s]
+model5 saved
+3   Average valid loss: 0.4564
+  Accuracy: 0.8942
+```
