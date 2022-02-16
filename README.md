@@ -714,3 +714,12 @@ model5 saved
 3   Average valid loss: 0.5758
   Accuracy: 0.8918
 ```
+
+
+
+# 2022-02-16
+
+_1
+
+기존 best_model 것에서 6개 중복데이터 추가, lambda 1.1로 학습
+
