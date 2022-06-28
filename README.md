@@ -7,7 +7,7 @@
 - ![nli3](README.assets/nli3.PNG)Kaggle notebook gpu 환경에서 학습을 진행하였습니다.
 - 데이터: 기존 학습데이터 + klue 검증데이터(기존 test셋에서 중복되는 데이터 6개 제거)
 - 모델: roberta-large + self explaining structures improve NLP models를 사용하였습니다.
-- 5 fold 전략과 가중치 초기화를 적용하였고 max_len은 베이스라인 것을 그대로 사용하였습니다.
+- 학습에는 5 fold 전략과 가중치 초기화를 적용하였습니다.
 
 
 
@@ -25,6 +25,7 @@ self explaing NLP: https://arxiv.org/abs/2012.01786
 ![nli2](README.assets/nli2.png)
 
 - 마침표를 제외한 특수문자가 포함되지 않은 것을 확인하였고 숫자와 영어 같은 경우에는 단위와 갯수를 다루는 문장이 있었기 때문에 제거하지 않는 것이 낫다고 판단하였습니다.
+- 불용어 같은 경우에는 유사해보이는 문장이라도 조사의 차이로 관계까 달라질 수 있기 때문에 제거하지 않았습니다.
 - max_len = 70
 
 
